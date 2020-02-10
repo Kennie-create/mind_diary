@@ -1,3 +1,5 @@
+[![Codeship Status for Kennie-create/mind_diary](https://app.codeship.com/projects/5245fbc0-2e74-0138-91f9-56b7d5cdb6a3/status?branch=master)](https://app.codeship.com/projects/384898)
+
 ## Mind Diary
 * An app where mental health patients can write daily journals to send to their doctor; they can also store information about their prescriptions.
 
