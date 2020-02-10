@@ -1,24 +1,31 @@
-# README
+## Mind Diary
+* An app where mental health patients can write daily journals to send to their doctor; they can also store information about their prescriptions.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
+* Ruby 2.6.5
+* Ruby-On-Rails 5.2.3
+* React 16.8.0
+* Devise
+* Carrierwave
+* Fog-AWS
 
-Things you may want to cover:
+## How to run the test suite
+* bundle exec rspec
+* yarn run test
 
-* Ruby version
+## Setup Instructions
+* bundle install
+* yarn install
+* bundle exec rake db:create
+* bundle exec rake db:migrate
+* bundle exec rake db:seed
+* rails s
+* In a separate tab, yarn start
+* In a browser, visit, http://localhost:3000
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Deployment instructions
+* git push heroku master
+* heroku run rake db:migrate
+* heroku ps:scale web=1
+* heroku ps
+* heroku open
