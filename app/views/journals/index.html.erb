@@ -1,0 +1,11 @@
+
+<h2>Previous Entries:</h2>
+
+<ul>
+  <% @journal.each do |journal| %>
+  <li>
+    <%= journal.title %>
+    <%= journal.body %>
+  </li>
+  <% end %>
+</ul>
