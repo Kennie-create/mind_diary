@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 import JournalTile from "./JournalTile"
 
 const JournalFormContainer = props => {
 
   const [formInput, setFormInput] = useState ({
-    title: " ",
-    body:" "
+    title: "",
+    body:""
   })
 
   let handleInputChange = event => {

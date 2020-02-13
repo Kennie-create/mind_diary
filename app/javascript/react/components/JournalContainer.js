@@ -41,6 +41,7 @@ const JournalContainer = props => {
       })
       .then(response => response.json())
       .then(responseToServer => {
+        debugger
         setJournals([
           ...journals,
         responseToServer])
@@ -70,7 +71,7 @@ const JournalContainer = props => {
         </div>
       </div>
     )
-    
+
   }
 
 
