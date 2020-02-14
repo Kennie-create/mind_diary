@@ -2,20 +2,17 @@ class Api::V1::JournalsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    journal = Journal.all
-    render json: journal
-  end
-
-  def show
-    journal = Journal.find(params[:id])
+    render json: Journal.all
   end
 
   def new
-    journal = Journal.new
+    render json: Journal.new
   end
 
   def create
     journal = Journal.new(journal_params)
+    user = current_user
+    journal.user = user
     if journal.save
       render json: journal
     else
