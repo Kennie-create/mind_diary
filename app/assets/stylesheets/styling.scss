@@ -19,3 +19,26 @@
 .indexWelcome {
   padding: 0
 }
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1581000539925-81019fc7967d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80");
+  background-size :cover;
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.welcome-text {
+  margin-left: auto
+}
+
+.welcome-text {
+  font-family: Quesha;
+  font-size: 70px
+}
+
+.welcome-buttons {
+  font-family: Quesha;
+  font-size: 25px
+}
+
