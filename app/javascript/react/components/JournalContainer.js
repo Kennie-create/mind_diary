@@ -27,27 +27,31 @@ const JournalContainer = props => {
 
   const addNewJournal = formInput => {
     fetch('/api/v1/journals',{
-        method: "POST",
-        body: JSON.stringify(formInput)
-      })
-      .then (response => {
-        if(response.ok){
-          return response;
-        } else {
-          let errorMessage = `{response.status} ($response.statusText)`,
-            error = new Error(errorMessage);
-          throw(error)
-        }
-      })
-      .then(response => response.json())
-      .then(responseToServer => {
-
-        setJournals([
-          ...journals,
-        responseToServer])
-      })
-      .catch(error => console.error(`Error in fetch ${error.message}`))
-    }
+      credentials: "same-origin",
+      method: "POST",
+      body: JSON.stringify(formInput),
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json"
+      }
+    })
+    .then (response => {
+      if(response.ok){
+        return response;
+      } else {
+        let errorMessage = `{response.status} ($response.statusText)`,
+          error = new Error(errorMessage);
+        throw(error)
+      }
+    })
+    .then(response => response.json())
+    .then(responseToServer => {
+      setJournals([
+        ...journals,
+      responseToServer])
+    })
+    .catch(error => console.error(`Error in fetch ${error.message}`)
+  )}
 
     const journalTiles = journals.map(journal => {
 
