@@ -1,24 +1,33 @@
-# README
+[![Codeship Status for Kennie-create/mind_diary](https://app.codeship.com/projects/5245fbc0-2e74-0138-91f9-56b7d5cdb6a3/status?branch=master)](https://app.codeship.com/projects/384898)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Mind Diary
+* An app where mental health patients can write daily journals to send to their doctor; they can also store information about their prescriptions.
 
-Things you may want to cover:
+## Dependencies
+* Ruby 2.6.5
+* Ruby-On-Rails 5.2.3
+* React 16.8.0
+* Devise
+* Carrierwave
+* Fog-AWS
 
-* Ruby version
+## How to run the test suite
+* bundle exec rspec
+* yarn run test
 
-* System dependencies
+## Setup Instructions
+* bundle install
+* yarn install
+* bundle exec rake db:create
+* bundle exec rake db:migrate
+* bundle exec rake db:seed
+* rails s
+* In a separate tab, yarn start
+* In a browser, visit, http://localhost:3000
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Deployment instructions
+* git push heroku master
+* heroku run rake db:migrate
+* heroku ps:scale web=1
+* heroku ps
+* heroku open
