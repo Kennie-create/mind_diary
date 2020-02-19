@@ -7,5 +7,4 @@ class Prescription < ApplicationRecord
   validates :expiration, presence: true
   validates :provider, presence: true
   validates :dosage, presence: true
-
 end

@@ -73,7 +73,7 @@ const  PrescriptionContainer = props => {
 
     return (
       <div className="row">
-        <div className="small-8 small-centered columns">
+        <div className="all-prescriptions">
           <h1>My Medicine Cabinet</h1>
           <hr />
           {prescriptionTiles}
@@ -81,8 +81,6 @@ const  PrescriptionContainer = props => {
         </div>
       </div>
     )
-
   }
-
 
 export default PrescriptionContainer

@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from "react"
 
-import PrescriptionTile from "./PrescriptionTile"
-
 const PrescriptionFormContainer = props => {
+
+  const setDefaultForm = {
+    name:"",
+    description:"",
+    date:"",
+    expiration:"",
+    provider:"",
+    dosage:"",
+    refills:"",
+    pharmacy:""
+  }
 
   const [formInput, setFormInput] = useState ({
     name:"",
@@ -25,6 +34,17 @@ const PrescriptionFormContainer = props => {
   let handleSubmit = event => {
     event.preventDefault()
     props.addNewPrescription(formInput)
+    setFormInput({
+      name:"",
+      description:"",
+      date:"",
+      expiration:"",
+      provider:"",
+      dosage:"",
+      refills:"",
+      pharmacy:""
+    })
+
   }
 
   return (
@@ -36,6 +56,7 @@ const PrescriptionFormContainer = props => {
           name="name"
           id="name"
           type="text"
+          value={formInput.name}
           onChange={handleInputChange}
         />
       </label>
@@ -46,6 +67,7 @@ const PrescriptionFormContainer = props => {
           name="description"
           id="description"
           type="text"
+          value={formInput.description}
           onChange={handleInputChange}
           />
       </label>
@@ -56,6 +78,7 @@ const PrescriptionFormContainer = props => {
           name="date"
           id="date"
           type="text"
+          value={formInput.date}
           onChange={handleInputChange}
         />
       </label>
@@ -66,6 +89,7 @@ const PrescriptionFormContainer = props => {
           name="expiration"
           id="expiration"
           type="text"
+          value={formInput.expiration}
           onChange={handleInputChange}
         />
       </label>
@@ -76,16 +100,18 @@ const PrescriptionFormContainer = props => {
           name="dosage"
           id="dosage"
           type="text"
+          value={formInput.dosage}
           onChange={handleInputChange}
         />
       </label>
 
       <label className="refills-box">
-        Refills (if none, input N/A):
+        Refills:
         <input
           name="refills"
           id="refills"
           type="text"
+          value={formInput.refills}
           onChange={handleInputChange}
         />
       </label>
@@ -96,6 +122,7 @@ const PrescriptionFormContainer = props => {
           name="provider"
           id="provider"
           type="text"
+          value={formInput.provider}
           onChange={handleInputChange}
           />
       </label>
@@ -106,12 +133,12 @@ const PrescriptionFormContainer = props => {
           name="pharmacy"
           id="pharmacy"
           type="text"
+          value={formInput.pharmacy}
           onChange={handleInputChange}
         />
       </label>
 
       <div className="prescription-button-group">
-        <button className="clear-button">Clear</button>
         <input className="submit-button" type="submit" value="Submit Prescription" />
       </div>
     </form>

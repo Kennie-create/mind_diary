@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/journals', to: 'journals#index'
-  get 'prescriptions', to: 'prescriptions#index'
+  get '/prescriptions', to: 'prescriptions#index'
 
   namespace "api" do
     namespace "v1" do
