@@ -69,7 +69,6 @@ const JournalContainer = props => {
       <div className="row">
         <div className="small-8 small-centered columns">
           <h1>My Past Entries</h1>
-          <hr />
           {journalTiles}
           <JournalFormContainer addNewJournal={addNewJournal} />
         </div>

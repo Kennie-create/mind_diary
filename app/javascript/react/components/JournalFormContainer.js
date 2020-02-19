@@ -6,7 +6,7 @@ const JournalFormContainer = props => {
 
   const [formInput, setFormInput] = useState ({
     title: "",
-    body:""
+    body: ""
   })
 
   let handleInputChange = event => {
@@ -38,6 +38,7 @@ const JournalFormContainer = props => {
         <textarea
           name="body"
           id="body"
+          type="text"
           onChange={handleInputChange}
         />
       </label>

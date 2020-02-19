@@ -2,10 +2,14 @@ import React from "react"
 
 const JournalTile = props => {
   return (
-    <div className="journal-tile">
+    <div>
+      <hr/>
+      <div className="journal-tile">
         <h2>{props.title}</h2>
         <p>{props.body}</p>
+      </div>
     </div>
+
   )
 }
 

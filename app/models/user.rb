@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :journals
+  has_many :prescriptions
   validates :first_name, presence: true
   validates :last_name, presence: true
 end
