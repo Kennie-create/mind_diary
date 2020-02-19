@@ -66,16 +66,24 @@ const JournalContainer = props => {
     })
 
     return (
-      <div className="row">
-        <div className="small-8 small-centered columns">
-          <h1>My Past Entries</h1>
-          {journalTiles}
+      <div className="top">
+        <div className="title">
+          <h3>My</h3>
+          <h1>Journals</h1>
+        </div>
+        <div className="page">
+          <div className="parallax1"></div>
+          <div className="paragraph">
+            <p>{journalTiles}</p>
+          </div>
+          <h2 className="add-journal-section">Add a new journal</h2>
+          <div className="parallax2"></div>
+        </div>
+        <div className="journal-form">
           <JournalFormContainer addNewJournal={addNewJournal} />
         </div>
       </div>
     )
-
   }
-
 
 export default JournalContainer

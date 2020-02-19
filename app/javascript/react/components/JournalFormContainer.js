@@ -4,6 +4,10 @@ import JournalTile from "./JournalTile"
 
 const JournalFormContainer = props => {
 
+  const setDefaultForm = {
+    title: "",
+    body: ""
+  }
   const [formInput, setFormInput] = useState ({
     title: "",
     body: ""
@@ -19,7 +23,13 @@ const JournalFormContainer = props => {
   let handleSubmit = event => {
     event.preventDefault()
     props.addNewJournal(formInput)
+    setFormInput({
+      title: "",
+      body: ""
+    })
+
   }
+
 
   return (
     <form className="journal-form" onSubmit={handleSubmit}>
@@ -29,6 +39,7 @@ const JournalFormContainer = props => {
           name="title"
           id="title"
           type="text"
+          value={formInput.title}
           onChange={handleInputChange}
         />
       </label>
@@ -39,14 +50,11 @@ const JournalFormContainer = props => {
           name="body"
           id="body"
           type="text"
+          value={formInput.body}
           onChange={handleInputChange}
         />
       </label>
-
-      <div className="button-group">
-        <button className="button">Clear</button>
-        <input className="button" type="submit" value="Submit Journal" />
-      </div>
+        <input className="journal-button" type="submit" value="Submit Journal" />
     </form>
   )
 }
