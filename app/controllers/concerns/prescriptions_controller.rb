@@ -9,6 +9,8 @@ class PrescriptionsController < ApplicationController
 
   def create
     prescriptions = Prescription.new(prescription_params)
+    user = current_user
+    prescription.user = user
     if prescription.save
       render :prescription
     else

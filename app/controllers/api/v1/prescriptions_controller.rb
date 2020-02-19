@@ -5,10 +5,6 @@ class Api::V1::PrescriptionsController < ApplicationController
     render json: Prescription.all
   end
 
-  def new
-    render json: Prescription.new
-  end
-
   def create
     prescription = Prescription.new(prescription_params)
     user = current_user
@@ -23,7 +19,6 @@ class Api::V1::PrescriptionsController < ApplicationController
   private
 
   def prescription_params
-    params.require(:journal).permit(:name, :description, :date, :expiration, :provider, :dosage, :refills, :pharmacy)
+    params.require(:prescription).permit(:name, :description, :date, :expiration, :provider, :dosage, :refills, :pharmacy)
   end
-
 end
