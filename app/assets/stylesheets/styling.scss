@@ -26,54 +26,29 @@
   margin: 10px;
   padding: 10px;
   width: 300px;
-  height: 300px;
+  text-align: left;
+  height: 350px;
   position: relative;
   display: inline-block;
-  background-image: url("https://images.unsplash.com/photo-1558956264-6a3e5702cac5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80")
+  background-image: url("https://images.unsplash.com/photo-1558956264-6a3e5702cac5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80");
+
+  h2 {
+  overflow:auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+    }
+
 
 }
 
 .prescription-form {
-  margin: 10px ;
-  border: grey solid 2px
+  margin: 0 auto;
+  border: #999 solid 1px;
+  background-color: #f6f6f6;
+  padding:10px;
 }
 
-.name-box, .description-box {
-  display: inline-block;
-  margin: 5px
-
-}
-
-.date-box, .expiration-box {
-  display: inline-block;
-  margin: 5px;
-}
-
-.dosage-box, .refills-box {
-  display: inline-block;
-  margin: 5px
-}
-
-.provider-box, .pharmacy-box {
-  display: inline-block;
-  margin: 5px
-}
-
-.description-box {
-  width: 800px
-}
-
-.pharmacy-box {
-  width: 450px
-}
-
-.name-box {
-  width: 300px
-}
-
-.dosage-box {
-  width: 350px
-}
 
 .column {
   margin:auto;
@@ -203,24 +178,23 @@ html, body {
 }
 
 .all-prescriptions {
-  justify-content: center
+  width:90%;
+  margin: 0 auto;
+  text-align:justify;
 }
 
-body {
-  background-image: url("https://images.unsplash.com/photo-1581000539925-81019fc7967d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80");
+.welcome-page {
+  background-image: url("https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1470&q=80");
   background-size :cover;
   height: 800px;
-  background-position: center;
+  background-position: left;
   background-repeat: no-repeat
 }
 
 .welcome-text {
-  margin-left: auto
-}
-
-.welcome-text {
   font-family: Quesha;
-  font-size: 70px
+  font-size: 70px;
+  margin-left: auto
 }
 
 .welcome-buttons {
@@ -228,3 +202,17 @@ body {
   font-size: 25px
 }
 
+.welcome-paragraph p {
+  font-family:  Quesha;
+  font-size: 35px;
+}
+
+.prescription-form {
+  width: 60%;
+  margin-top:20px;
+}
+
+.description-tile {
+  overflow: auto;
+  height:50px
+}

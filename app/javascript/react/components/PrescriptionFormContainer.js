@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 const PrescriptionFormContainer = props => {
 
@@ -44,11 +44,10 @@ const PrescriptionFormContainer = props => {
       refills:"",
       pharmacy:""
     })
-
   }
 
   return (
-    <form className="prescription-form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <h2>Add a new prescription:</h2>
       <label className="name-box">
         Name:
@@ -77,7 +76,7 @@ const PrescriptionFormContainer = props => {
         <input
           name="date"
           id="date"
-          type="text"
+          type="month"
           value={formInput.date}
           onChange={handleInputChange}
         />
@@ -88,7 +87,7 @@ const PrescriptionFormContainer = props => {
         <input
           name="expiration"
           id="expiration"
-          type="text"
+          type="month"
           value={formInput.expiration}
           onChange={handleInputChange}
         />
@@ -99,7 +98,8 @@ const PrescriptionFormContainer = props => {
         <input
           name="dosage"
           id="dosage"
-          type="text"
+          type="number"
+          min="1"
           value={formInput.dosage}
           onChange={handleInputChange}
         />
@@ -110,7 +110,8 @@ const PrescriptionFormContainer = props => {
         <input
           name="refills"
           id="refills"
-          type="text"
+          type="number"
+          min="1"
           value={formInput.refills}
           onChange={handleInputChange}
         />

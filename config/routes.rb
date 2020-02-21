@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get '/journals', to: 'journals#index'
-  get '/prescriptions', to: 'prescriptions#index'
+  get '/journals', to: 'homes#index'
+  get '/prescriptions', to: 'homes#index'
 
   namespace "api" do
     namespace "v1" do
-      resources :journals, only: [:index, :show, :new, :create]
+      resources :journals, only: [:index, :show, :new, :create, :destroy]
       resources :prescriptions, only: [:index, :show, :new, :create]
     end
   end

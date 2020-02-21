@@ -1,14 +1,19 @@
 class Api::V1::PrescriptionsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   def index
-    render json: Prescription.all
+    prescriptions = Prescription.all
+    render json: prescriptions
+  end
+
+  def new
+    prescriptions = Prescription.new
   end
 
   def create
     prescription = Prescription.new(prescription_params)
-    user = current_user
-    prescription.user = user
+    prescription.user = current_user
     if prescription.save
       render json: prescription
     else

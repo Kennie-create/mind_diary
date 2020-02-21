@@ -4,7 +4,7 @@ const PrescriptionTile = props => {
   return (
     <div className="prescription-tile">
         <h2>{props.name}</h2>
-        <p>{props.description}</p>
+        <div className="description-tile"> <p>{props.description}</p></div>
         <li>Provider: {props.provider}</li>
         <li>Date Prescribed: {props.date}</li>
         <li>Dosage: {props.dosage}</li>
