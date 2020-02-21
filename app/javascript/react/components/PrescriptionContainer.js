@@ -5,6 +5,7 @@ import PrescriptionFormContainer from "./PrescriptionFormContainer"
 
 const  PrescriptionContainer = props => {
   const [prescriptions, setPrescriptions] = useState([])
+const [errors, setErrors] = useState([])
 
   useEffect(() => {
   fetch('/api/v1/prescriptions')
@@ -21,7 +22,6 @@ const  PrescriptionContainer = props => {
   .then (responseFromServer => {
       setPrescriptions(responseFromServer)
   })
-
   .catch(error => console.error(`Error in fetch ${error.message}`))
 }, [])
 
@@ -46,9 +46,15 @@ const  PrescriptionContainer = props => {
     })
     .then(response => response.json())
     .then(responseToServer => {
-      setPrescriptions([
-        ...prescriptions,
-      responseToServer])
+      if(!Array.isArray(responseToServer)){
+        setPrescriptions([
+          ...prescriptions, responseToServer
+      ])
+
+
+      } else {
+        setErrors(responseToServer)
+      }
     })
     .catch(error => console.error(`Error in fetch ${error.message}`)
   )}
@@ -70,14 +76,24 @@ const  PrescriptionContainer = props => {
         />
       )
     })
-
+    const errorList = errors.map((error, index) => {
+      return (
+        <li key={index}>{error}</li>
+      )
+    })
     return (
       <div className="row">
         <div className="all-prescriptions">
           <h1>My Medicine Cabinet</h1>
           <hr />
           {prescriptionTiles}
-          <PrescriptionFormContainer addNewPrescription={addNewPrescription} />
+          <hr/>
+          <div className="prescription-form">
+            <ul>
+              {errorList}
+            </ul>
+            <PrescriptionFormContainer addNewPrescription={addNewPrescription} />
+        </div>
         </div>
       </div>
     )
