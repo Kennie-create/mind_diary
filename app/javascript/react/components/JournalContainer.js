@@ -5,6 +5,7 @@ import JournalFormContainer from "./JournalFormContainer"
 
 const JournalContainer = props => {
   const [journals, setJournals] = useState([])
+  const [errors, setErrors] = useState([])
 
   useEffect(() => {
   fetch('/api/v1/journals')
@@ -46,12 +47,19 @@ const JournalContainer = props => {
     })
     .then(response => response.json())
     .then(responseToServer => {
-      setJournals([
-        ...journals,
-      responseToServer])
+      if(!Array.isArray(responseToServer)){
+        setJournals([
+          ...journals, responseToServer
+      ])
+
+
+      } else {
+        setErrors(responseToServer)
+      }
     })
     .catch(error => console.error(`Error in fetch ${error.message}`)
   )}
+
 
     const journalTiles = journals.map(journal => {
 
@@ -62,6 +70,12 @@ const JournalContainer = props => {
           title={journal.title}
           body={journal.body}
         />
+      )
+    })
+
+    const errorList = errors.map((error, index) => {
+      return (
+        <li key={index}>{error}</li>
       )
     })
 
@@ -80,6 +94,9 @@ const JournalContainer = props => {
           <div className="parallax2"></div>
         </div>
         <div className="journal-form">
+          <ul>
+            {errorList}
+          </ul>
           <JournalFormContainer addNewJournal={addNewJournal} />
         </div>
       </div>
