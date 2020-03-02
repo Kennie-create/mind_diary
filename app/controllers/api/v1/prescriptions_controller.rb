@@ -3,12 +3,12 @@ class Api::V1::PrescriptionsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def index
-    prescriptions = Prescription.all
-    render json: prescriptions
+    prescription = Prescription.all
+    render json: prescription
   end
 
   def new
-    prescriptions = Prescription.new
+    prescription = Prescription.new
   end
 
   def create
@@ -19,6 +19,22 @@ class Api::V1::PrescriptionsController < ApplicationController
     else
       render json: prescription.errors.full_messages
     end
+  end
+
+  def update
+    prescription = Prescription.find(params[:id])
+    prescription.assign_attributes(prescription_params)
+    if prescription.save
+      render json: prescription
+    else
+      render json: prescription.errors.full_messages
+    end
+  end
+
+  def destroy
+    prescription = Prescription.find(params[:id])
+    prescription.destroy
+    render json: Prescription.all
   end
 
   private

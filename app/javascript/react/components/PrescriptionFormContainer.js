@@ -48,8 +48,8 @@ const PrescriptionFormContainer = props => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Add a new prescription:</h2>
-      <label className="name-box">
+      <h2  className="form-header">Add a new prescription:</h2>
+      <label>
         Name:
         <input
           name="name"
@@ -60,7 +60,7 @@ const PrescriptionFormContainer = props => {
         />
       </label>
 
-      <label className="description-box">
+      <label>
         Description:
         <input
           name="description"
@@ -71,7 +71,7 @@ const PrescriptionFormContainer = props => {
           />
       </label>
 
-      <label className="date-box">
+      <label>
         Prescription Date:
         <input
           name="date"
@@ -82,7 +82,7 @@ const PrescriptionFormContainer = props => {
         />
       </label>
 
-      <label className="expiration-box">
+      <label>
         Expiration date:
         <input
           name="expiration"
@@ -93,31 +93,30 @@ const PrescriptionFormContainer = props => {
         />
       </label>
 
-      <label className="dosage-box">
+      <label>
         Dosage:
         <input
           name="dosage"
           id="dosage"
-          type="number"
-          min="1"
+          type="text"
           value={formInput.dosage}
           onChange={handleInputChange}
         />
       </label>
 
-      <label className="refills-box">
+      <label>
         Refills:
         <input
           name="refills"
           id="refills"
           type="number"
-          min="1"
+          min="0"
           value={formInput.refills}
           onChange={handleInputChange}
         />
       </label>
 
-      <label className="provider-box">
+      <label>
         Provider:
         <input
           name="provider"
@@ -128,7 +127,7 @@ const PrescriptionFormContainer = props => {
           />
       </label>
 
-      <label className="pharmacy-box">
+      <label>
         Pharmacy:
         <input
           name="pharmacy"
