@@ -5,7 +5,8 @@ import PrescriptionFormContainer from "./PrescriptionFormContainer"
 
 const  PrescriptionContainer = props => {
   const [prescriptions, setPrescriptions] = useState([])
-const [errors, setErrors] = useState([])
+  const [errors, setErrors] = useState([])
+  const [deleted, setDeleted] = useState(false)
 
   useEffect(() => {
   fetch('/api/v1/prescriptions')
@@ -51,13 +52,34 @@ const [errors, setErrors] = useState([])
           ...prescriptions, responseToServer
       ])
 
-
       } else {
         setErrors(responseToServer)
       }
     })
     .catch(error => console.error(`Error in fetch ${error.message}`)
   )}
+
+  const deletePrescription = (prescriptionId) => {
+    fetch(`/api/v1/prescriptions/${prescriptionId}`, {
+      credentials: 'same-origin',
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error(`${response.status} ${response.statusText}`)
+      }
+    })
+    .then(allPrescriptions => {
+      setPrescriptions(allPrescriptions)
+    })
+    .catch(error => console.error(`Error in fetch ${error.message}`))
+  }
 
     const prescriptionTiles = prescriptions.map(prescription => {
 
@@ -71,8 +93,9 @@ const [errors, setErrors] = useState([])
           expiration={prescription.expiration}
           provider={prescription.provider}
           dosage={prescription.dosage}
-          refill={prescription.refill}
+          refills={prescription.refills}
           pharmacy={prescription.pharmacy}
+          deletePrescription={deletePrescription}
         />
       )
     })
