@@ -6,6 +6,7 @@ import JournalFormContainer from "./JournalFormContainer"
 const JournalContainer = props => {
   const [journals, setJournals] = useState([])
   const [errors, setErrors] = useState([])
+  const [deleted, setDeleted] = useState(false)
 
   useEffect(() => {
   fetch('/api/v1/journals')
@@ -60,6 +61,27 @@ const JournalContainer = props => {
     .catch(error => console.error(`Error in fetch ${error.message}`)
   )}
 
+  const deleteJournal = (journalId) => {
+    fetch(`/api/v1/journals/${journalId}`, {
+      credentials: 'same-origin',
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error(`${response.status} ${response.statusText}`)
+      }
+    })
+    .then(allJournals => {
+      setJournals(allJournals)
+    })
+    .catch(error => console.error(`Error in fetch ${error.message}`))
+  }
 
     const journalTiles = journals.map(journal => {
 
@@ -69,6 +91,7 @@ const JournalContainer = props => {
           id={journal.id}
           title={journal.title}
           body={journal.body}
+          deleteJournal={deleteJournal}
         />
       )
     })

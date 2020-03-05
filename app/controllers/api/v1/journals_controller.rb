@@ -23,8 +23,11 @@ class Api::V1::JournalsController < ApplicationController
   end
 
   def destroy
-    journals = Journal.find(params[:id])
-    render json: journal
+    def destroy
+      journal = Journal.find(params[:id])
+      journal.destroy
+      render json: Journal.all
+    end
   end
 
 
