@@ -1,9 +1,10 @@
 class Api::V1::PrescriptionsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
   skip_before_action :verify_authenticity_token, only: [:create]
+  before_action :authenticate_user!, only: [:index, :new, :create, :destroy]
 
   def index
-    prescription = Prescription.all
+    prescription = current_user.prescriptions
     render json: prescription
   end
 
@@ -33,8 +34,12 @@ class Api::V1::PrescriptionsController < ApplicationController
 
   def destroy
     prescription = Prescription.find(params[:id])
+    if current_user == prescription.user
     prescription.destroy
     render json: Prescription.all
+    else
+    render json: {message: "Could not delete"}
+    end
   end
 
   private
