@@ -10,8 +10,11 @@ const IndexContainer = (props) => {
 
       <div>
         <p className="welcome-paragraph">
-          This is a zen environment, where you can express your thoughts and feelings as well as store and track your prescriptions. Be free, be happy!
+          This is a zen environment, where you can express your thoughts and feelings through journaling, as well as store and track your prescriptions. Be free, be happy!
         </p>
+        <o>
+          Please sign up to start your healing journey or sign in to resume it
+        </o>
       </div>
 
     </div>
