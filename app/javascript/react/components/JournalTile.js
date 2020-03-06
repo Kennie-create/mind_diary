@@ -16,7 +16,6 @@ const JournalTile = props => {
       </div>
       <input onClick={handleDelete}  type="submit" value="Delete Journal"/>
     </div>
-
   )
 }
 
