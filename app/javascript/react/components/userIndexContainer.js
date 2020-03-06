@@ -1,6 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-const userIndexContainer = (props) => {
+const UserIndexContainer = (props) => {
 
   return(
     <div className="welcome-page">
@@ -13,6 +14,7 @@ const userIndexContainer = (props) => {
           Which Zen space would you like to visit today?
         </p>
           <Link className="welcome-button" to="/journals">Journals</Link>
+          
           <Link className="welcome-button" to="/prescriptions">Prescriptions</Link>
       </div>
 
@@ -20,4 +22,4 @@ const userIndexContainer = (props) => {
 
   )
 }
-export default userIndexContainer
+export default UserIndexContainer

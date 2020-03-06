@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get '/journals', to: 'homes#index'
   get '/prescriptions', to: 'homes#index'
+  get '/welcome', to: 'homes#index'
 
   namespace "api" do
     namespace "v1" do
