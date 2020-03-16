@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import {Link} from 'react-router-dom'
 
 import JournalTile from "./JournalTile"
 
@@ -55,6 +56,15 @@ const JournalFormContainer = props => {
         />
       </label>
         <input className="journal-button" type="submit" value="Submit Journal" />
+
+          <div>
+            <Link className="redirect-button" to="/welcome"> Homepage </Link> -
+          </div>
+
+          <div>
+            <Link className="redirect-button" to="/prescriptions"> Go to my prescriptions </Link> -
+          </div>
+
     </form>
   )
 }
