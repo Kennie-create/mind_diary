@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import {Link} from 'react-router-dom'
 
 const PrescriptionFormContainer = props => {
 
@@ -141,6 +142,15 @@ const PrescriptionFormContainer = props => {
       <div className="prescription-button-group">
         <input className="submit-button" type="submit" value="Submit Prescription" />
       </div>
+
+      <div>
+        <Link className="redirect-button" to="/welcome"> Homepage </Link> -
+      </div>
+
+      <div>
+        <Link className="redirect-button" to="/journals"> Go to my journals </Link> -
+      </div>
+
     </form>
   )
 }
