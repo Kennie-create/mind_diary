@@ -16,7 +16,6 @@ const UserIndexContainer = (props) => {
           <Link className="welcome-button" to="/journals"> My Journals</Link> -
           <Link className="welcome-button" to="/prescriptions">My Prescriptions</Link>
       </div>
-
     </div>
 
   )
