@@ -8,8 +8,8 @@
 * Ruby-On-Rails 5.2.3
 * React 16.8.0
 * Devise
-* Carrierwave
-* Fog-AWS
+
+
 
 ## How to run the test suite
 * bundle exec rspec
