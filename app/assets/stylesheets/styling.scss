@@ -229,3 +229,45 @@ html, body {
 .form-header {
   font-family:'Oswald'
 }
+
+.user-welcome-paragraph {
+  font-family: Quesha;
+  font-size: 40px;
+  margin-left: auto;
+  text-align:left;
+}
+
+.welcome-button {
+  font-family: Quesha;
+  font-size: 30px;
+  color: white;
+  font-style: italic;
+  position: relative;
+  top: -30px;
+}
+
+.user-welcome-text {
+  font-family: Quesha;
+}
+
+.user-welcome-page {
+  background-image: url("https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1093&q=80");
+  background-size :cover;
+  height: 800px;
+  background-position: left;
+  background-repeat: no-repeat
+}
+
+.sign-in-form {
+  margin: 0 auto;
+  width:60%;
+  text-align: center;
+  border:1px solid black;
+}
+
+.signup-form {
+  margin: 0 auto;
+  width:60%;
+  text-align: center;
+   border:1px solid black;
+}
