@@ -31,7 +31,6 @@ const JournalFormContainer = props => {
 
   }
 
-
   return (
     <form className="journal-form" onSubmit={handleSubmit}>
       <label>
