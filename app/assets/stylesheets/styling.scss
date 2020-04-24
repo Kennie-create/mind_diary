@@ -205,7 +205,7 @@ html, body {
 .welcome-paragraph p {
   font-family:  Quesha;
   font-size: 35px;
-  text-align: justify;  
+  text-align: justify;
 }
 
 .prescription-form {
@@ -259,16 +259,16 @@ html, body {
   background-repeat: no-repeat
 }
 
-.sign-in-form {
-  margin: 0 auto;
-  width:60%;
-  text-align: center;
-  border:1px solid black;
-}
-
 .signup-form {
   margin: 0 auto;
   width:60%;
   text-align: center;
-   border:1px solid black;
+   border:4px solid black;
+}
+
+.sign-in-form {
+  margin: 0 auto;
+  width:60%;
+  text-align: center;
+  border:4px solid black;
 }
