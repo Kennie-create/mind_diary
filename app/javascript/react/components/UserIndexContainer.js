@@ -13,7 +13,7 @@ const UserIndexContainer = (props) => {
         <p className="user-welcome-paragraph">
           Which zen space would you like to visit today?
         </p>
-          <Link className="welcome-button" to="/journals"> My Journals</Link> -
+          <Link className="welcome-button" to="/journals"> My Journals</Link>
           <Link className="welcome-button" to="/prescriptions"> My Prescriptions</Link>
       </div>
     </div>
