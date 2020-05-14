@@ -9,8 +9,6 @@
 * React 16.8.0
 * Devise
 
-
-
 ## How to run the test suite
 * bundle exec rspec
 * yarn run test
@@ -32,5 +30,5 @@
 * heroku ps
 * heroku open
 
-## Deployment instructions
+## Notes
 * Images from Unsplash
