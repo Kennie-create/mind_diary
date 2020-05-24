@@ -183,11 +183,11 @@ html, body {
 }
 
 .welcome-page {
-  background-image: url("https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1470&q=80");
+  background-image: url("https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1470&q=800");
   background-size :cover;
   height: 800px;
   background-position: left;
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
 }
 
 .welcome-text {
@@ -195,11 +195,6 @@ html, body {
   font-size: 70px;
   margin-left: auto;
   text-align:left;
-}
-
-.welcome-buttons {
-  font-family: Quesha;
-  font-size: 25px
 }
 
 .welcome-paragraph p {
